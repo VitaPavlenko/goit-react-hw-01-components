@@ -1,0 +1,14 @@
+.transaction-history {
+  border: 1px solid black;
+  margin: auto;
+  width: 350px;
+}
+
+.transaction {
+  border: 1px solid black;
+  background-color: rgb(196, 196, 230);
+}
+
+.tran :nth-child(2n) {
+  background-color: cadetblue;
+}

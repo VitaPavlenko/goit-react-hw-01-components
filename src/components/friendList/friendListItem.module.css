@@ -1,0 +1,27 @@
+.item {
+  width: 300px;
+  height: 100px;
+  background-color: white;
+  margin: auto;
+  border: 1px solid gray;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  display: flex;
+  /* align-content: center; */
+  justify-content: start;
+  align-items: center;
+  margin-bottom: 5px;
+  padding-top: 5px;
+  padding-left: 30px;
+}
+.avatar {
+  width: 80px;
+  height: 80px;
+  margin-right: 10px;
+}
+
+.name {
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.05;
+}
