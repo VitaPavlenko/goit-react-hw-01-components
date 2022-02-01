@@ -1,28 +1,36 @@
+import PropTypes from 'prop-types';
 import TransactionItem from './transactionItem';
+function TransactionHistory({ items }) {
+  return (
+    <table className="transaction-history">
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Amount</th>
+          <th>Currency</th>
+        </tr>
+      </thead>
 
-export default function TransactionHistory({ items })
-
-
-{
-    return (<table className="transaction-history"> 
-    <thead>
-    <tr>
-      <th>Type</th>
-      <th>Amount</th>
-      <th>Currency</th>
-    </tr>
-  </thead>
-
-   <tbody>
+      <tbody>
         {items.map(item => (
-            <TransactionItem
-                 key={item.id}
-                    type={item.type}
-                    amount={item.amount}
-                    currency={item.currency}
-                />))}                  
-      </tbody></table>)
-
- 
-   
+          <TransactionItem
+            key={item.id}
+            type={item.type}
+            amount={item.amount}
+            currency={item.currency}
+          />
+        ))}
+      </tbody>
+    </table>
+  );
 }
+
+TransactionHistory.propTypes = {
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+    }),
+  ),
+};
+
+export default TransactionHistory;
