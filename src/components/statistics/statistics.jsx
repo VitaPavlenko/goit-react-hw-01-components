@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import s from './statistics.module.css';
-function Statistics({ stats }) {
+function Statistics({ title, stats }) {
   return (
     <section className={s['statistics']}>
-      <h2 className={s['title']}>Upload stats</h2>
+      {title && <h2 className={s['title']}>{title}</h2>}
       <ul className={s['stat-list']}>
         {stats.map(stat => (
           <li
@@ -25,7 +25,14 @@ function Statistics({ stats }) {
 }
 
 Statistics.propTypes = {
-  stats: PropTypes.array,
+  stats: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      label: PropTypes.string,
+      percentage: PropTypes.number,
+    }),
+  ),
+  title: PropTypes.string,
 };
 
 export default Statistics;
